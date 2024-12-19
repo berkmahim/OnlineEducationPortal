@@ -1,4 +1,4 @@
-using EduPortal.DataAccess.Directory;
+using EduPortal.DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

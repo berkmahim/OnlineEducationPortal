@@ -1,13 +1,13 @@
 ﻿using EduPortal.Entity.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace EduPortal.DataAccess.Directory;
+namespace EduPortal.DataAccess.Context;
 
 public class EduPortalContext : DbContext
 {
     public EduPortalContext(DbContextOptions options) : base(options)
     {
-        
+
     }
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<About> Abouts { get; set; }
@@ -20,6 +20,6 @@ public class EduPortalContext : DbContext
     public DbSet<SocialMedia> SocialMedias { get; set; }
     public DbSet<Subscriber> Subscribers { get; set; }
     public DbSet<Testimonial> Testimonials { get; set; }
-    
-    
+
+
 }
