@@ -1,9 +1,17 @@
+using System.Reflection;
+using EduPortal.Business.Abstract;
+using EduPortal.Business.Concrete;
+using EduPortal.DataAccess.Abstract;
 using EduPortal.DataAccess.Context;
+using EduPortal.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped(typeof(IRepository<>) , typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericService<>) , typeof(GenericManager<>));
 builder.Services.AddDbContext<EduPortalContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
