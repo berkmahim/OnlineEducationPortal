@@ -12,7 +12,7 @@ namespace EduPortal.Entity.Entities
         public string CouseName { get; set; }
         public string ImageUrl { get; set; }
         public int CategoryId { get; set; }
-        public CourseCategory Category { get; set; }
+        public CourseCategory CourseCategory { get; set; }
         public decimal Price { get; set; }
         public bool IsShown { get; set; }
 
